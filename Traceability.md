@@ -1,0 +1,10 @@
+###Traceability Information
+
+|Use Case|Design Element|Program Code|Test Method|
+|----|------------------|------------|-----------|
+|Stall manager adds a customer.|StallManager.addCustomer;<br>Customer|boolean CustomerHandler::customerExists(Customer);<br>                                    long CustomerHandler::saveCustomer(Customer); |Test plan test cases 01~05, 22, 24~26|
+|Stall manager edits a customer.|StallManager.editCustomer;<br>Customer|                   int CustomerHandler::getCustomerId(Customer);<br>                  Customer CustomerHandler::getCustomer(int);<br>                    ArrayList(Customer) CustomerHandler::getCustomerList();<br>void CustomerHandler::updateCustomer(int, ContentValues);<br>            void CustomeHandler::deleteCustomer(int);<br>|Test plan test cases 01~05, 21~23, 27~31|
+|Customer purchases.|StallManager.editCustomer;<br>Customer;<br>Purchase|int CustomerHandler::getCustomerId(Customer);<br>double Customer::getRewardsBalance();<br>boolean Customer::isGoldStatus();<br>long CustomerHandler::savePurchase(int, Purchase);<br>double CustomerHandler::getYTDSpending(Customer)|Test plan test cases 08~18, 32, 34|
+|Stall manager displays a customer's history of purchases.|StallManager.editCustomer;<br>Customer;<br>Purchase|int CustomerHandler::getCustomerId(Customer);<br>ArrayList(Purchase) CustomerHandler::getPurchaseList()<br>|Test plan test cases 06, 33|
+|Stall manager displays a customer's rewards detail.|StallManager.editCustomer;<br>Customer|int CustomerHandler::getCustomerId(Customer);<br>boolean Customer::isGoldStatus();<br>double Customer::getRewardsBalance();<br>double CustomerHandler::getYTDSpending(int)|Test plan test cases 07|
+|A customer gets email notice when receiving rewards or achieving Gold status.|Utilities| static String CreditCardService::getCardInfo();<br>static boolean PaymentService::processPayment(String, String, String, String, String, double);<br>static boolean EmailService::sendEmail(String, String, String)|Test plan test cases 19~20
