@@ -1,7 +1,5 @@
 ### StallManager App
 
-#### Current progress
-
 1. Main page (StallManagerActivity.java)
 	- Add Customer: direct the stall manager to Add Customer page (AddEditCustomerActivity.java)
 	- View Customer: direct stall manager to View Customer page (ViewCustomerActivity.java)
